@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // IMPORTANT: `base` must exactly match the GitHub repo name, or the deployed
 // GitHub Pages site loads a blank page. Change this if you rename the repo.
-const base = '/kobelco-crane-specs/'
+const base = '/kobelco-crane-app/'
 
 // https://vite.dev/config/
 export default defineConfig({
