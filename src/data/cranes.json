@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ck850-iii",
+    "series": "CK-II Series",
+    "model": "CK 850-III",
+    "specUrl": "https://kcmu-cranes.com/wp-content/uploads/2016/09/CK850-III-Spec-Book-12-07.pdf"
+  },
+  {
+    "id": "ck850g-3",
+    "series": "CK-G3 Series",
+    "model": "CK 850G-3",
+    "specUrl": "https://www.kobelcocm-global.com/products/cranes/other/pdf/CK850G-3_spec.pdf"
+  },
+  {
+    "id": "ck1100g-3",
+    "series": "CK-G3 Series",
+    "model": "CK 1100G-3",
+    "specUrl": "https://www.kobelcocm-global.com/products/cranes/other/pdf/CK1100G-3_spec.pdf"
+  },
+  {
+    "id": "ck1600-ii",
+    "series": "CK-II Series",
+    "model": "CK 1600-II",
+    "specUrl": "https://kcmu-cranes.com/wp-content/uploads/C-1600-II-Spec%20-Book-1207.pdf"
+  },
+  {
+    "id": "ck1600g-3",
+    "series": "CK-G3 Series",
+    "model": "CK 1600G-3",
+    "specUrl": "https://www.kobelcocm-global.com/products/cranes/other/pdf/CK1600G-3_spec.pdf"
+  },
+  {
+    "id": "ck2000-ii",
+    "series": "CK-II Series",
+    "model": "CK 2000-II",
+    "specUrl": "https://kcmu-cranes.com/wp-content/uploads/2016/09/CK2000-II-Spec-Book-12-07.pdf"
+  },
+  {
+    "id": "ck2000g-3",
+    "series": "CK-G3 Series",
+    "model": "CK 2000G-3",
+    "specUrl": "https://www.kobelcocm-global.com/products/cranes/other/pdf/CK2000G-3_spec.pdf"
+  },
+  {
+    "id": "ck2500-ii",
+    "series": "CK-II Series",
+    "model": "CK 2500-II",
+    "specUrl": "https://kcmu-cranes.com/wp-content/uploads/2016/09/CK2500-II-Spec-Book-12-07.pdf"
+  },
+  {
+    "id": "ck2750g-2",
+    "series": "CK-G2 Series",
+    "model": "CK 2750G-2",
+    "specUrl": "https://kcmu-cranes.com/specs/2750G-2/files/assets/basic-html/page-1.html"
+  },
+  {
+    "id": "ck2750g-3",
+    "series": "CK-G3 Series",
+    "model": "CK 2750G-3",
+    "specUrl": "https://www.kobelcocm-global.com/products/cranes/other/pdf/CK2750G-3_spec.pdf"
+  }
+]
