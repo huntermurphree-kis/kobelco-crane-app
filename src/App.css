@@ -1,11 +1,18 @@
 :root {
-  --bg: #1a1a1a;
-  --surface: #232323;
-  --surface-hover: #2c2c2c;
-  --border: #333333;
-  --accent: #e4572e;
-  --text: #f2f2f2;
-  --text-dim: #9a9a9a;
+  /* Kobelco brand palette */
+  --teal: #00b0ab; /* header */
+  --teal-dark: #009b96;
+  --yellow: #fbb015; /* CTA / buttons */
+  --yellow-dark: #e89f00;
+  --blue: #33a2db; /* footer */
+  --text: #2d2d2d; /* body text */
+  --muted: #838391; /* muted links / labels */
+  --btn-text: #333333; /* text on yellow buttons */
+
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #f3f7f8;
+  --border: #e4e4ea;
 }
 
 .app {
@@ -14,17 +21,17 @@
   min-height: 100svh;
   display: flex;
   flex-direction: column;
+  background: var(--bg);
 }
 
-/* --- Sticky header --- */
+/* --- Sticky teal header --- */
 .app-header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(26, 26, 26, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 16px 12px;
+  background: var(--teal);
+  padding: 14px 16px 14px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
 }
 
 .brand {
@@ -35,30 +42,19 @@
 }
 
 .brand-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  object-fit: cover;
-  flex: none;
+  height: 26px;
+  width: auto;
+  display: block;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.brand-title {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.brand-subtitle {
-  font-size: 13px;
-  color: var(--text-dim);
+.brand-tag {
+  font-size: 12px;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  color: #ffffff;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 .search {
@@ -67,18 +63,19 @@
   padding: 0 14px;
   font-size: 16px; /* >=16px avoids iOS auto-zoom on focus */
   color: var(--text);
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: #ffffff;
+  border: 1px solid transparent;
   border-radius: 10px;
   outline: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 
 .search:focus {
-  border-color: var(--accent);
+  border-color: var(--yellow);
 }
 
 .search::placeholder {
-  color: var(--text-dim);
+  color: var(--muted);
 }
 
 /* --- Content --- */
@@ -95,14 +92,14 @@
 }
 
 .banner-error {
-  background: rgba(228, 87, 46, 0.14);
-  border: 1px solid rgba(228, 87, 46, 0.5);
-  color: #ffb59e;
+  background: #fdecea;
+  border: 1px solid #f5b5ae;
+  color: #b23b2e;
 }
 
 .empty {
   text-align: center;
-  color: var(--text-dim);
+  color: var(--muted);
   padding: 48px 16px;
 }
 
@@ -112,10 +109,10 @@
 
 .group-title {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  color: var(--text-dim);
+  color: var(--teal);
   margin: 0 0 8px 4px;
 }
 
@@ -128,53 +125,246 @@
   gap: 8px;
 }
 
-/* --- Row (tap target) --- */
+/* --- Row (card container; .row-open is the tap target) --- */
 .row {
-  width: 100%;
-  min-height: 56px;
   display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 10px 14px;
+  align-items: stretch;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 12px;
-  color: var(--text);
-  text-align: left;
-  cursor: pointer;
-  transition: background 0.12s ease, border-color 0.12s ease;
-  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  transition: background 0.12s ease, border-color 0.12s ease,
+    box-shadow 0.12s ease;
 }
 
 .row:hover,
 .row:active {
   background: var(--surface-hover);
-  border-color: var(--accent);
+  border-color: var(--teal);
+  box-shadow: 0 2px 8px rgba(0, 176, 171, 0.12);
+}
+
+.row-open {
+  flex: 1;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .row-model {
   font-size: 17px;
   font-weight: 600;
   flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--teal-dark);
+  background: rgba(0, 176, 171, 0.12);
+  border: 1px solid rgba(0, 176, 171, 0.4);
+  border-radius: 999px;
+  padding: 2px 7px;
 }
 
 .row-series {
   font-size: 12px;
-  color: var(--text-dim);
+  color: var(--muted);
   margin-right: 4px;
 }
 
 .row-chevron {
   font-size: 22px;
-  color: var(--accent);
+  color: var(--teal);
   line-height: 1;
 }
 
-/* --- Footer --- */
+/* Edit / delete controls, only shown on custom cranes */
+.row-actions {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid var(--border);
+}
+
+.icon-btn {
+  height: 100%;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.icon-btn:hover {
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.icon-btn-danger:hover {
+  color: #d64027;
+}
+
+/* --- Footer (blue band) --- */
 .app-footer {
   padding: 16px;
   text-align: center;
   font-size: 12px;
-  color: var(--text-dim);
-  border-top: 1px solid var(--border);
+  color: #ffffff;
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-credit {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --- Buttons --- */
+.btn {
+  font: inherit;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-add {
+  margin-left: auto;
+  padding: 8px 14px;
+  background: var(--yellow);
+  color: var(--btn-text);
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.btn-add:hover {
+  background: var(--yellow-dark);
+}
+
+.btn-primary {
+  background: var(--yellow);
+  color: var(--btn-text);
+}
+
+.btn-primary:hover {
+  background: var(--yellow-dark);
+}
+
+.btn-ghost {
+  background: #ffffff;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-ghost:hover {
+  background: var(--surface-hover);
+}
+
+/* --- Modal / form --- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 45, 45, 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 16px;
+  z-index: 100;
+}
+
+.modal {
+  width: 100%;
+  max-width: 460px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+}
+
+.modal-title {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.field > span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.field input {
+  height: 44px;
+  padding: 0 12px;
+  font-size: 16px; /* >=16px avoids iOS auto-zoom */
+  color: var(--text);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+}
+
+.field input:focus {
+  border-color: var(--teal);
+}
+
+.form-error {
+  color: #d64027;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.modal-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 4px 0 16px;
+  line-height: 1.4;
+}
+
+.modal-note code {
+  color: var(--teal-dark);
+  font-weight: 600;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (min-width: 520px) {
+  .modal-backdrop {
+    align-items: center;
+  }
 }

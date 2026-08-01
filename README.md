@@ -9,7 +9,20 @@ Deployed to GitHub Pages.
 
 ---
 
-## Adding or editing a crane (the common task)
+## Adding a crane — two ways
+
+### A) In-app "Add" (quick, this device only)
+
+Tap **+ Add** in the header, fill in Model / Series / Spec URL, and Save. The
+crane appears immediately with an **Added** badge and can be edited (✎) or
+deleted (🗑). These are stored in the browser's `localStorage`, so they live on
+**that one device/browser only** — they are not shared with other users and are
+not part of a deploy. Good for trying something out or a personal add.
+
+Implementation: `src/useCustomCranes.js` (storage) + `src/CraneForm.jsx` (form).
+The built-in list and device-local additions are merged in `src/App.jsx`.
+
+### B) Edit the data file (permanent, shared with everyone)
 
 Everything is driven by one file — you never touch app logic to add a crane.
 
@@ -83,19 +96,29 @@ spec sheets themselves link to external Kobelco pages and need connectivity.
 
 ---
 
-## Icons — replace the placeholders
+## Branding & icons
 
-The icons in `public/icons/` are **generated placeholders** (an orange "K").
-Replace them with the official Kobelco logo (same filenames / sizes) when the
-brand team provides artwork:
+The app uses the official Kobelco logo and brand palette.
 
-- `icon-192.png` — 192×192
-- `icon-512.png` — 512×512
-- `icon-512-maskable.png` — 512×512, safe-area padded for Android maskable icons
-- `apple-touch-icon.png` — 180×180 (iOS home screen)
+- `public/kobelco-logo.png` — cropped blue wordmark (transparent), used for icons
+- `public/kobelco-logo-white.png` — white version, used in the teal header
+- `public/icons/` — home-screen icons generated from the logo
+  (`icon-192.png`, `icon-512.png`, `icon-512-maskable.png`, `apple-touch-icon.png`)
 
-Brand palette placeholders in use: accent `#E4572E`, background `#1A1A1A`.
-Swap for exact Kobelco brand hex values if provided.
+To refresh from a new logo file, drop the new PNG in and re-run the icon
+generation step, or regenerate the four icon sizes from the wordmark.
+
+**Brand palette:**
+
+| Role                | Hex       |
+| ------------------- | --------- |
+| Header teal         | `#00B0AB` |
+| CTA / button yellow | `#FBB015` |
+| Footer blue         | `#33A2DB` |
+| Body text           | `#2D2D2D` |
+| Muted / labels      | `#838391` |
+| Button text         | `#333333` |
+| Page background     | `#FFFFFF` |
 
 ---
 
