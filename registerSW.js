@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/kobelco-crane-specs/sw.js', { scope: '/kobelco-crane-specs/' })})}
