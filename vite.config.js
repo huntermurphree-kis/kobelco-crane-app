@@ -18,7 +18,7 @@ export default defineConfig({
         name: 'Kobelco Crane Specs',
         short_name: 'Kobelco',
         description: 'Browse Kobelco crane models and open their spec sheets.',
-        theme_color: '#00b0ab',
+        theme_color: '#0072bb',
         background_color: '#ffffff',
         display: 'standalone',
         orientation: 'portrait',

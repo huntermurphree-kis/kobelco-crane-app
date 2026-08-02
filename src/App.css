@@ -1,6 +1,7 @@
 :root {
   /* Kobelco brand palette */
-  --teal: #00b0ab; /* header */
+  --logo-blue: #0072bb; /* header — the blue from the KOBELCO wordmark */
+  --teal: #00b0ab; /* accents */
   --teal-dark: #009b96;
   --yellow: #fbb015; /* CTA / buttons */
   --yellow-dark: #e89f00;
@@ -29,7 +30,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--teal);
+  background: var(--logo-blue);
   padding: 14px 16px 14px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
 }
